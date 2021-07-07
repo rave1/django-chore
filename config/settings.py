@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'chore_main',
     'chore_api',
     'rest_framework',
+    'crispy_forms',
 
 ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 1

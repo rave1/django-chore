@@ -4,7 +4,7 @@ from django.views import generic
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
+from chore_main.forms import UserCreationForm
 from chore_main.forms import PersonForm
 from django.views.generic.base import RedirectView
 from .models import Chore, Person, User
