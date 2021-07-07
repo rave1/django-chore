@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+{%block title %} Chores: {%endblock%}
+{%block content%}
+<div>
+    <h1>Our chores: </h1>
+    <ul class="list-group">
+        
+            {% for chore in chores %}
+                <li class="list-group-item">
+                    {{ chore.title }}
+                    <div class="ms-2 me-auto">
+                        {{chore.task}}
+                    </div>
+                </li>
+            {% endfor %}
+    </ul>
+
+</div>
+{% endblock content %}
