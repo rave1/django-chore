@@ -29,6 +29,9 @@ class Person(models.Model):
     )
     role  = models.CharField(max_length=20, choices=ROLE_CHOICES)
 
+    def __str__(self):
+        return self.user.username
+
 # class Master(models.Model):
 #     user = models.OneToOneField(User, on_delete=CASCADE)
 #     is_active = models.BooleanField(default=True)
