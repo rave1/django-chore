@@ -20,7 +20,7 @@ def create_user(request):
             person = person_form.save(commit=False)
             person.user = user
             person.save()
-            return redirect('api/')
+            return redirect('/')
     else:
         user_form = UserCreationForm()
         person_form = PersonForm()

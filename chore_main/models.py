@@ -10,8 +10,8 @@ from django.contrib.auth.models import User
 
 class Chore(models.Model):
     title = models.CharField('Title', max_length=120)
-    # master = models.ForeignKey("Master", on_delete=CASCADE)
-    # slave = models.ForeignKey("Slave", on_delete=CASCADE)
+    master = models.ForeignKey("Person", on_delete=CASCADE, related_name="master")
+    slave = models.ForeignKey("Person", on_delete=CASCADE, related_name="slave")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_done = models.BooleanField(default=False)

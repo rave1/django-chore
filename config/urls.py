@@ -19,8 +19,8 @@ from django.urls import path, include
 from rest_framework import routers
 from chore_api import views
 from chore_main.views import ChoresView, HomeView, create_user, chore_create, chore_list, create_user
-from django.contrib.auth.views import LoginView
-
+from django.contrib.auth.views import LoginView, LogoutView
+from config import settings
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 
@@ -33,5 +33,6 @@ urlpatterns = [
     path('register/', create_user, name='register'),
     path('login/', LoginView.as_view(), name='login'),
     path('chores/', chore_list),
-    path('create/', chore_create)
+    path('create/', chore_create),
+    path(r'logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]
