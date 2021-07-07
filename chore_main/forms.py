@@ -35,3 +35,8 @@ class ChoreModelForm(forms.ModelForm):
             "slave",
             "task",
         )
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['master'].queryset = Person.objects.filter(role="Master")
+        self.fields['slave'].queryset = Person.objects.filter(role="Slave")
