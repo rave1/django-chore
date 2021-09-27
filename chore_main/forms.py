@@ -26,6 +26,10 @@ class UserCreationForm(UserCreationForm): #extending built-in form
 
 
 
+
+this is a test
+
+
 class ChoreModelForm(forms.ModelForm):
     class Meta:
         model = Chore
